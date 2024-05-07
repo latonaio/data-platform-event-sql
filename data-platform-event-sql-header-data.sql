@@ -9,6 +9,10 @@ CREATE TABLE `data_platform_event_header_data`
   `ValidityStartTime`                time NOT NULL,
   `ValidityEndDate`                  date NOT NULL,
   `ValidityEndTime`                  time NOT NULL,
+  `OperationStartDate`               date NOT NULL,
+  `OperationStartTime`               time NOT NULL,
+  `OperationEndDate`                 date NOT NULL,
+  `OperationEndTime`                 time NOT NULL,
   `Description`                      varchar(60) NOT NULL,
   `LongText`                         varchar(1000) NOT NULL,
   `Introduction`                     varchar(200) DEFAULT NULL,
@@ -21,10 +25,14 @@ CREATE TABLE `data_platform_event_header_data`
   `Tag4`                             varchar(40) DEFAULT NULL,
   `DistributionProfile`              varchar(4) NOT NULL,
   `PointConditionType`               varchar(4) NOT NULL,
+  `QuestionnaireType`                varchar(4) DEFAULT NULL,
+  `QuestionnaireTemplate`            varchar(4) DEFAULT NULL,
   `CreationDate`                     date NOT NULL,
   `CreationTime`                     time NOT NULL,
   `LastChangeDate`                   date NOT NULL,
   `LastChangeTime`                   time NOT NULL,
+  `CreateUser`                       int(12) NOT NULL,
+  `LastChangeUser`                   int(12) NOT NULL,
   `IsReleased`                       tinyint(1) DEFAULT NULL,
   `IsCancelled`                      tinyint(1) DEFAULT NULL,
   `IsMarkedForDeletion`              tinyint(1) DEFAULT NULL,
@@ -38,7 +46,11 @@ CREATE TABLE `data_platform_event_header_data`
     CONSTRAINT `DPFMEventHeaderDataProject_fk` FOREIGN KEY (`Project`) REFERENCES `data_platform_project_project_data` (`Project`),
     CONSTRAINT `DPFMEventHeaderDataWBSElement_fk` FOREIGN KEY (`Project`, `WBSElement`) REFERENCES `data_platform_project_wbs_element_data` (`Project`, `WBSElement`),
     CONSTRAINT `DPFMEventHeaderDataDistributionProfile_fk` FOREIGN KEY (`DistributionProfile`) REFERENCES `data_platform_distribution_profile_distribution_profile_data` (`DistributionProfile`),
-    CONSTRAINT `DPFMEventHeaderDataPointConditionType_fk` FOREIGN KEY (`PointConditionType`) REFERENCES `data_platform_point_condition_type_point_condition_type_data` (`PointConditionType`)
+    CONSTRAINT `DPFMEventHeaderDataPointConditionType_fk` FOREIGN KEY (`PointConditionType`) REFERENCES `data_platform_point_condition_type_point_condition_type_data` (`PointConditionType`),
+    CONSTRAINT `DPFMEventHeaderDataQuestionnaireType_fk` FOREIGN KEY (`QuestionnaireType`) REFERENCES `data_platform_questionnaire_type_questionnaire_type_data` (`QuestionnaireType`),
+    CONSTRAINT `DPFMEventHeaderDataQuestionnaireTemplate_fk` FOREIGN KEY (`QuestionnaireTemplate`) REFERENCES `data_platform_questionnaire_tmpl_questionnaire_tmpl_data` (`QuestionnaireTemplate`),
+    CONSTRAINT `DPFMEventHeaderDataCreateUser_fk` FOREIGN KEY (`CreateUser`) REFERENCES `data_platform_business_partner_general_data` (`BusinessPartner`),
+    CONSTRAINT `DPFMEventHeaderDataLastChangeUser_fk` FOREIGN KEY (`LastChangeUser`) REFERENCES `data_platform_business_partner_general_data` (`BusinessPartner`)
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

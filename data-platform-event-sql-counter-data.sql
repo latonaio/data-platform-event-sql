@@ -2,13 +2,12 @@ CREATE TABLE `data_platform_event_counter_data`
 (
   `Event`                            int(16) NOT NULL,
   `NumberOfLikes`                    int(10) DEFAULT NULL,
-  `NumberOfCouponsIssued`            int(10) DEFAULT NULL,
-  `NumberOfCouponsAcquired`          int(10) DEFAULT NULL,
+  `NumberOfParticipations`           int(10) DEFAULT NULL,
+  `NumberOfAttendances`              int(10) DEFAULT NULL,
   `CreationDate`                     date NOT NULL,
+  `CreationTime`                     time NOT NULL,
   `LastChangeDate`                   date NOT NULL,
-  `IsReleased`                       tinyint(1) DEFAULT NULL,
-  `IsCancelled`                      tinyint(1) DEFAULT NULL,
-  `IsMarkedForDeletion`              tinyint(1) DEFAULT NULL,
+  `LastChangeTime`                   time NOT NULL,
 
     PRIMARY KEY (`Event`),
 
