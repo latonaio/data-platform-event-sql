@@ -1,9 +1,9 @@
 CREATE TABLE `data_platform_event_counter_data`
 (
   `Event`                            int(16) NOT NULL,
-  `NumberOfLikes`                    int(10) DEFAULT NULL,
-  `NumberOfParticipations`           int(10) DEFAULT NULL,
-  `NumberOfAttendances`              int(10) DEFAULT NULL,
+  `NumberOfLikes`                    int(10) NOT NULL,
+  `NumberOfParticipations`           int(10) NOT NULL,
+  `NumberOfAttendances`              int(10) NOT NULL,
   `CreationDate`                     date NOT NULL,
   `CreationTime`                     time NOT NULL,
   `LastChangeDate`                   date NOT NULL,

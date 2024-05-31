@@ -16,6 +16,8 @@ data-platform-event-sql には、sqlの設定ファイルとして、以下の�
 * data-platform-event-sql-game-data.sql（データ連携基盤 イベント - ゲームデータ）
 * data-platform-event-sql-counter-data.sql（データ連携基盤 イベント - カウンタデータ）
 * data-platform-event-sql-like-data.sql（データ連携基盤 イベント - いいねデータ）
+* data-platform-event-sql-point-participation-data.sql（データ連携基盤 イベント - 参加(権利)データ）
+* data-platform-event-sql-point-attendance-data.sql（データ連携基盤 イベント - 現地参加データ）
 * data-platform-event-sql-point-condition-element-data.sql（データ連携基盤 イベント - ポイント条件要素データ）
 * data-platform-event-sql-point-transaction-data.sql（データ連携基盤 イベント - ポイント取引データ）
 * data-platform-event-sql-questionnaire-data.sql（データ連携基盤 イベント - アンケートデータ）
